@@ -10,10 +10,9 @@ function setup() {
   createCanvas(600, 600);
 
   // Populate months variables
-  // We remove the first column because it is Year
-  // We remove the 13+ columns because they are also not months
-  months = data.columns.slice(1, 13);
-
+  // months = data.columns.slice(1, 13);
+  months = ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"];
+  
   // Get first row
   let row = data.getRow(0);
 
