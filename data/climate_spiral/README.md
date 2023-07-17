@@ -5,3 +5,5 @@ This exercise involves creating a climate spiral with [p5js](https://p5js.org/) 
 ## Instructions
 
 1. Navigate to [NASA GISS Data page](https://data.giss.nasa.gov/gistemp/) and download Global-mean monthly, seasonl, and annual means in `CSV` format
+2. Remove header row that is not part of data set.
+
