@@ -30,4 +30,9 @@ function draw() {
   fill(255);
   noStroke();
   text("1°", 154, 0);
+
+  stroke(255);
+  strokeWeight(2);
+  noFill();
+  circle(0, 0, 500);
 }
