@@ -11,7 +11,8 @@ function setup() {
 
   // Populate months variables
   // We remove the first column because it is Year
-  months = data.columns.slice(1);
+  // We remove the 13+ columns because they are also not months
+  months = data.columns.slice(1, 13);
 
   // Get first row
   let row = data.getRow(0);
