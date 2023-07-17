@@ -6,9 +6,20 @@ function preload() {
 
 function setup() {
   createCanvas(400, 400);
-  console.log(data.getRowCount());
+
+  // Get first row
+  let row = data.getRow(0);
 }
 
 function draw() {
-  background(220);
+  background(0);
+  translate(width / 2, height / 2);
+  noFill();
+  stroke(255);
+  strokeWeight(4);
+
+  circle(0, 0, 100);
+  fill(255);
+  noStroke();
+  text("0°", 54, 0);
 }
