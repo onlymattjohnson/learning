@@ -12,9 +12,6 @@ function setup() {
   // Populate months variables
   // months = data.columns.slice(1, 13);
   months = ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"];
-  
-  // Get first row
-  let row = data.getRow(0);
 
 }
 
@@ -28,7 +25,7 @@ function draw() {
   circle(0, 0, 100);
   fill(255);
   noStroke();
-  text("0°", 54, 0);
+  text("0°", 70, 0);
 
   stroke(255);
   strokeWeight(2);
@@ -36,7 +33,7 @@ function draw() {
   circle(0, 0, 300);
   fill(255);
   noStroke();
-  text("1°", 154, 0);
+  text("1°", 170, 0);
 
   stroke(255);
   strokeWeight(2);
@@ -51,9 +48,23 @@ function draw() {
     textSize(32);
 
     let angle = map(i, 0, months.length, 0, TWO_PI);
-    let x = 250 * cos(angle);
-    let y = 250 * sin(angle);
-    
-    text(months[i], x, y);
+    push();
+    let x = 264 * cos(angle);
+    let y = 264 * sin(angle);
+    translate(x,y);
+    rotate(angle + PI/2);
+    text(months[i], 0, 0);
+    pop();
+  }
+
+  // Get first row
+  let row = data.getRow(0);
+  let year = row.get("Year");
+  
+  textAlign(CENTER, CENTER);
+  text(year, 0, 0);
+
+  for (let i = 0; i < months.length; i++) {
+    let anomaly = row.getNum(months[i]);
   }
 }
