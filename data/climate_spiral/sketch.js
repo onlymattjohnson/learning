@@ -5,7 +5,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
 
   // Get first row
   let row = data.getRow(0);
