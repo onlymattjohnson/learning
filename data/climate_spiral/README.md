@@ -2,6 +2,10 @@
 
 This exercise involves creating a climate spiral with [p5js](https://p5js.org/) following along with the exercise in [How to Code a Climate Spiral](https://www.youtube.com/watch?v=rVBTxnRyOuE) by The Coding Train.
 
+![Screenshot of the final 2023 image](img/finalimage.png)
+
+![Animated gif of the visual](img/animated.gif)
+
 ## Instructions
 
 1. Navigate to [NASA GISS Data page](https://data.giss.nasa.gov/gistemp/) and download Global-mean monthly, seasonl, and annual means in `CSV` format
