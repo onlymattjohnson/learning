@@ -5,8 +5,10 @@ let months;
 let zeroRadius = 125;
 let oneRadius = 200;
 
-let currentRow = 0;
-let currentMonth = 0;
+let currentRow = 1;
+let currentMonth = 1;
+
+let previousAnomaly = 0;
 
 function preload() {
   data = loadTable('data/giss-data-july-17-2023.csv', 'csv', 'header');
@@ -69,10 +71,10 @@ function draw() {
   textSize(32);
   text(year, 0, 0);
 
-  beginShape();
   noFill();
   stroke(255);
 
+  let firstValue = true;
   for (let j = 0; j < currentRow; j++) {
     let row = data.getRow(j);
 
@@ -86,15 +88,22 @@ function draw() {
 
       // 90 degree offset because we start from the top
       let angle = map(i, 0, months.length, 0, TWO_PI) - PI  / 3;
+      let pr = map(previousAnomaly, 0, 1, zeroRadius, oneRadius);
       let r = map(anomaly, 0, 1, zeroRadius, oneRadius);
 
-      let x = r * cos(angle);
-      let y = r * sin(angle);
+      let x1 = r * cos(angle);
+      let y1 = r * sin(angle);
+      let x2 = pr * cos(angle - PI / 6);
+      let y2 = pr * sin(angle - PI / 6);
 
-      vertex(x, y);
+      if (!firstValue) {
+        line(x1, y1, x2, y2);
+      }
+      firstValue = false;
+      previousAnomaly = anomaly;
     }
   }
-  endShape();
+
   currentMonth = currentMonth + 1;
   if (currentMonth == months.length) {
     currentMonth = 0;
@@ -104,5 +113,4 @@ function draw() {
     }
   }
 
-  // frameRate(5);
 }
