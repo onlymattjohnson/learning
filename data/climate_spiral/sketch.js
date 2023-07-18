@@ -85,7 +85,7 @@ function draw() {
 
     for (let i = 0; i < totalMonths; i++) {
       let anomaly = row.get(months[i]);
-
+      anomaly = parseFloat(anomaly);
       // 90 degree offset because we start from the top
       let angle = map(i, 0, months.length, 0, TWO_PI) - PI  / 3;
       let pr = map(previousAnomaly, 0, 1, zeroRadius, oneRadius);
@@ -97,6 +97,19 @@ function draw() {
       let y2 = pr * sin(angle - PI / 6);
 
       if (!firstValue) {
+        let avg = (anomaly + previousAnomaly) * 0.5;
+        let cold = color(0, 0, 255);
+        let warm = color(255, 0, 0);
+        let zero = color(255);
+
+        let lineColor = zero;
+
+        if (avg < 0) {
+          lineColor = lerpColor(zero, cold, abs(avg));
+        } else {
+          lineColor = lerpColor(zero, warm, abs(avg));
+        }
+        stroke(lineColor);
         line(x1, y1, x2, y2);
       }
       firstValue = false;
