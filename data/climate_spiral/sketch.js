@@ -68,6 +68,9 @@ function draw() {
   textAlign(CENTER, CENTER);
   text(year, 0, 0);
 
+  beginShape();
+  noFill();
+  stroke(255);
   for (let i = 0; i < months.length; i++) {
     let anomaly = row.getNum(months[i]);
 
@@ -78,6 +81,7 @@ function draw() {
     let x = r * cos(angle);
     let y = r * sin(angle);
 
-    circle(x, y, 8);
+    vertex(x, y);
   }
+  endShape(CLOSE);
 }
