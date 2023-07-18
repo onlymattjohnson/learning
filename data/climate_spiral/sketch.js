@@ -2,7 +2,7 @@
 let data;
 let months;
 
-let zeroRadius = 75;
+let zeroRadius = 125;
 let oneRadius = 200;
 
 let currentRow = 0;
@@ -24,14 +24,15 @@ function setup() {
 function draw() {
   background(0);
   translate(width / 2, height / 2);
-  
+  textAlign(CENTER, CENTER);
+  textSize(16);
+
   stroke(255);
   strokeWeight(2);
   noFill();
   circle(0, 0, zeroRadius * 2);
   fill(255);
   noStroke();
-  textSize(15);
   text("0°", zeroRadius + 10, 0);
 
   stroke(255);
@@ -79,7 +80,7 @@ function draw() {
     if (j == currentRow - 1) {
       totalMonths = currentMonth;
     }
-    
+
     for (let i = 0; i < totalMonths; i++) {
       let anomaly = row.get(months[i]);
 
@@ -103,5 +104,5 @@ function draw() {
     }
   }
 
-  frameRate(5);
+  // frameRate(5);
 }
