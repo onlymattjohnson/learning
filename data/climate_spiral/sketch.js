@@ -65,17 +65,17 @@ function draw() {
     pop();
   }
 
+  let year = data.getRow(currentRow).get("Year");
+  textSize(32);
+  text(year, 0, 0);
+
   beginShape();
   noFill();
   stroke(255);
 
-
   for (let j = 0; j < currentRow; j++) {
     let row = data.getRow(j);
-    // let year = row.get("Year");
-    // textAlign(CENTER, CENTER);
-    // text(year, 0, 0);
-    
+
     let totalMonths = months.length;
     if (j == currentRow - 1) {
       totalMonths = currentMonth;
