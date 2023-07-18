@@ -85,7 +85,7 @@ function draw() {
       let anomaly = row.get(months[i]);
 
       // 90 degree offset because we start from the top
-      let angle = map(i, 0, months.length, 0, TWO_PI) + PI / 2;
+      let angle = map(i, 0, months.length, 0, TWO_PI) - PI  / 3;
       let r = map(anomaly, 0, 1, zeroRadius, oneRadius);
 
       let x = r * cos(angle);
