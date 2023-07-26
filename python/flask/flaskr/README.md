@@ -18,3 +18,8 @@ A [flask tutorial](https://flask.palletsprojects.com/en/2.3.x/tutorial/) from th
 > .venv\Scripts\activate
 ```
 
+### Install requirements
+
+```
+pip install requirements.txt
+```
