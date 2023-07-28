@@ -13,3 +13,9 @@ An exercise to learn about fixing overplotted points in R. This exercise comes f
 ### Smaller points
 
 > ![smaller points](img/fig1.png)
+
+### Transparency
+
+You can fix the overplotting with some transparency. **Alpha** ranges from 0 (completely transparent) to 1 (completely solid). This is with an alpha of 0.01
+
+> ![smaller points](img/fig2.png)
