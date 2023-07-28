@@ -51,3 +51,8 @@ We start by plotting the state of Georgia by itself.
 
 > ![Georgia](img/fig6.png)
 
+### Grouped by County
+
+We can solve for overplotting by mapping campground count by county.
+
+> ![By County](img/fig7.png)

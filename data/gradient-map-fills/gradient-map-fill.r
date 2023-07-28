@@ -124,3 +124,21 @@ plot_initial <- ggplot() +
   coord_sf(crs = ga_crs)
 
 plot_initial
+
+# Plot the campgrounds, grouped by counties
+ga_counties_campgrounds <- ga_counties %>%
+  st_join(ga_campgrounds) %>%
+  group_by(NAMELSAD) %>%
+  summarize(total = sum(!is.na(DESCRIPTOR)))
+
+plot_county <- ggplot() + 
+  geom_sf(data = ga_counties_campgrounds, aes(fill=total), color = NA) + 
+  geom_sf(data = ga_state, fill = NA, color="black", linewidth = 0.25) + 
+  geom_sf(data = rivers_global_ga, linewidth = 0.3, color = "white") +
+  geom_sf(data = rivers_na_ga, linewidth = 0.1, color = "white") +
+  geom_sf(data = lakes_global_ga, fill = "white", color = NA) +
+  geom_sf(data = lakes_na_ga, fill = "white", color = NA) +
+  scale_fill_viridis_c(option = "magma", guide = "none", na.value = "black") +
+  coord_sf(crs = ga_crs)
+
+plot_county
