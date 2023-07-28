@@ -23,3 +23,16 @@ ggplot(diamonds, aes(x = carat, y = price)) +
 ggplot(diamonds, aes(x = carat, y = price)) + 
   geom_point(size = 0.2) + 
   theme_minimal()
+
+## fig2.png: semi-transparent points
+ggplot(diamonds, aes(x = carat, y = price)) + 
+  geom_point(alpha = 0.01) + 
+  theme_minimal()
+
+
+## fig3.png: binned points
+ggplot(diamonds, aes(x = carat, y = price)) + 
+  stat_bin2d() + 
+  scale_fill_viridis_c() +
+  theme_minimal()
+

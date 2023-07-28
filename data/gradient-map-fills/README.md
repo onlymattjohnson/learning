@@ -19,3 +19,10 @@ An exercise to learn about fixing overplotted points in R. This exercise comes f
 You can fix the overplotting with some transparency. **Alpha** ranges from 0 (completely transparent) to 1 (completely solid). This is with an alpha of 0.01
 
 > ![smaller points](img/fig2.png)
+
+### Binning the points in boxes
+
+You can draw a grid across the axes and color each box based on the count of dots in each square
+
+> ![binned points](img/fig3.png)
+
