@@ -18,4 +18,8 @@ ggplot(diamonds, aes(x = carat, y = price)) +
   geom_point() + 
   theme_minimal()
 
-
+# Fixes
+## fig1.png: Smaller points
+ggplot(diamonds, aes(x = carat, y = price)) + 
+  geom_point(size = 0.2) + 
+  theme_minimal()
