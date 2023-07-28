@@ -43,5 +43,11 @@ You can also create a sort of heat map (it looks a lot like thermal vision) by p
 
 # Geographic data
 
+This gets trickier with maps because we're not dealing with nice tidy rectangles, even if we do still have an x/y axis.
 
+## Georgia Campgrounds
+
+We start by plotting the state of Georgia by itself.
+
+> ![Georgia](img/fig6.png)
 
