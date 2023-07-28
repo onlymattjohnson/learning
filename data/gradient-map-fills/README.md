@@ -26,3 +26,10 @@ You can draw a grid across the axes and color each box based on the count of dot
 
 > ![binned points](img/fig3.png)
 
+### Binning the points in boxes
+
+You can draw a hex grid across the axes and color each box based on the count of dots in each square
+
+> ![binned points](img/fig4.png)
+
+

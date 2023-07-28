@@ -36,3 +36,8 @@ ggplot(diamonds, aes(x = carat, y = price)) +
   scale_fill_viridis_c() +
   theme_minimal()
 
+## fig4.png: hex binned
+ggplot(diamonds, aes(x = carat, y = price)) + 
+  stat_binhex() + 
+  scale_fill_viridis_c() +
+  theme_minimal()
