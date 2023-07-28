@@ -142,3 +142,40 @@ plot_county <- ggplot() +
   coord_sf(crs = ga_crs)
 
 plot_county
+
+# Or, we can make our own grid
+ga_grid <- ga_state %>%
+  st_make_grid(n = c(20, 20))
+
+## Full grid
+ggplot() +
+  geom_sf(data = ga_state) + 
+  geom_sf(data = ga_grid, alpha = 0.3) + 
+  theme_void()
+
+## Grid just on Georgia
+ga_grid_map <- st_intersection(ga_state, ga_grid) %>%
+  st_as_sf() %>%
+  mutate(grid_id = 1:n())
+
+ggplot() + 
+  geom_sf(data = ga_grid_map) +  
+  theme_void()
+
+## Summarize campground to the grid
+
+campgrounds_per_grid_box <- ga_grid_map %>%
+  st_join(ga_campgrounds) %>%
+  group_by(grid_id) %>%
+  summarize(total = sum(!is.na(DESCRIPTOR)))
+
+plot_grid <- ggplot() +
+  geom_sf(data = campgrounds_per_grid_box, aes(fill = total), color = NA) +
+  geom_sf(data = ga_state, fill = NA, color = "black", linewidth = 0.25) +
+  geom_sf(data = rivers_global_ga, linewidth = 0.3, color = "white") +
+  geom_sf(data = rivers_na_ga, linewidth = 0.1, color = "white") +
+  geom_sf(data = lakes_global_ga, fill = "white", color = NA) +
+  geom_sf(data = lakes_na_ga, fill = "white", color = NA) +
+  scale_fill_viridis_c(option = "magma", guide = "none") +
+  coord_sf(crs = ga_crs)
+plot_grid

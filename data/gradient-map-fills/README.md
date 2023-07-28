@@ -56,3 +56,9 @@ We start by plotting the state of Georgia by itself.
 We can solve for overplotting by mapping campground count by county.
 
 > ![By County](img/fig7.png)
+
+Alternatively, we could make our own grid boxes of even sizes and plot there.
+
+> ![Make our grids](img/fig8.png)
+> ![Make our grids](img/fig9.png)
+> ![Make our grids](img/fig10.png)
