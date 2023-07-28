@@ -41,3 +41,12 @@ ggplot(diamonds, aes(x = carat, y = price)) +
   stat_binhex() + 
   scale_fill_viridis_c() +
   theme_minimal()
+
+## fig5.png: density contour
+withr::with_seed(4393, {
+  dsmall <- diamonds[sample(nrow(diamonds), 1000),]
+})
+
+ggplot(dsmall, aes(x=carat, y=price)) +
+  geom_density2d_filled() +
+  theme_minimal()

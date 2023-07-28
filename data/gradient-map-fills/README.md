@@ -32,4 +32,16 @@ You can draw a hex grid across the axes and color each box based on the count of
 
 > ![binned points](img/fig4.png)
 
+### Density contour
+
+You can also create a sort of heat map (it looks a lot like thermal vision) by plotting the contours of the density of points in each area of the axes. This is another way to use color to indicate the density where the single point plots will not.
+
+> ![density](img/fig5.png)
+
+
+--- 
+
+# Geographic data
+
+
 
